@@ -43,9 +43,6 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 
     PBJVideoPlayerPlaybackState _playbackState;
     PBJVideoPlayerBufferingState _bufferingState;
-
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    UIPanGestureRecognizer *_panGestureRecognizer;
     
     // flags
     struct {
@@ -61,8 +58,6 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 @synthesize videoPath = _videoPath;
 @synthesize playbackState = _playbackState;
 @synthesize bufferingState = _bufferingState;
-@synthesize tapGestureRecognizer = _tapGestureRecognizer;
-@synthesize panGestureRecognizer = _panGestureRecognizer;
 
 #pragma mark - getters/setters
 
@@ -185,16 +180,6 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
         _videoView.playerLayer.hidden = YES;
         self.view = _videoView;
         
-        // gestures
-        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_handleTap:)];
-        _tapGestureRecognizer.delegate = self;
-        [self.view addGestureRecognizer:_tapGestureRecognizer];
-        
-        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_handlePanGestureRecognizer:)];
-        _panGestureRecognizer.delegate = self;
-        _panGestureRecognizer.cancelsTouchesInView = YES;
-        //[self.view addGestureRecognizer:_panGestureRecognizer];
-        
         // Application NSNotifications
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
         [nc addObserver:self selector:@selector(_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
@@ -206,7 +191,6 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 
 - (void)dealloc
 {
-    _tapGestureRecognizer.delegate = nil;
     _videoView.player = nil;
     _delegate = nil;
 
@@ -305,19 +289,37 @@ typedef void (^PBJVideoPlayerBlock)();
     });
 }
 
-#pragma mark - UIGestureRecognizerDelegate
+#pragma mark - UIResponder
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (gestureRecognizer == _panGestureRecognizer) {
-        CGPoint translation = [_panGestureRecognizer translationInView:_panGestureRecognizer.view];
-        return fabs(translation.y) < fabs(translation.x);
+    if (_videoPath) {
+        
+        switch (_playbackState) {
+            case PBJVideoPlayerPlaybackStateStopped:
+            {
+                [self playFromBeginning];
+                break;
+            }
+            case PBJVideoPlayerPlaybackStatePaused:
+            {
+                [self play];
+                break;
+            }
+            case PBJVideoPlayerPlaybackStatePlaying:
+            case PBJVideoPlayerPlaybackStateFailed:
+            default:
+            {
+                [self pause];
+                break;
+            }
+        }
+        
+    } else {
+        [super touchesEnded:touches withEvent:event];
     }
-
-    return YES;
+    
 }
-
-#pragma mark - UIGestureRecognizer
 
 - (void)_handleTap:(UIGestureRecognizer *)gestureRecognizer
 {
@@ -329,28 +331,6 @@ typedef void (^PBJVideoPlayerBlock)();
         [self play];
     }
 }
-
-- (void)_handlePanGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer
-{
-    switch (gestureRecognizer.state) {
-        case UIGestureRecognizerStateBegan:
-        case UIGestureRecognizerStateChanged:
-        {
-            break;
-        }
-        case UIGestureRecognizerStateEnded:
-        case UIGestureRecognizerStateCancelled:
-        {
-            
-            _player.rate = 0;
-            break;
-        }
-        case UIGestureRecognizerStateFailed:
-        default:
-            break;
-    }
-}
-
 
 #pragma mark - AV NSNotificaions
 

@@ -1,8 +1,5 @@
-
-Note: I'm in the middle of releasing this, not integrated with cocoapods at the moment
-
 ## PBJVideoPlayer
-'PBJVideoPlayer' is an iOS video player, which supports touch-to-play and swipe-to-scrub.
+'PBJVideoPlayer' is an iOS video player, which features touch-to-play.
 
 It supports both iOS 6 and iOS 7 as well as 64-bit, and is capable of playing local and remote video files.
 
@@ -24,6 +21,17 @@ pod 'PBJVideoPlayer'
 ```
 
 ```objective-c
+// allocate controller
+_videoPlayerController = [[PBJVideoPlayerController alloc] init];
+_videoPlayerController.delegate = self; _videoPlayerController.view.frame = self.view.bounds;
+
+// setup media
+_videoPlayerController.videoPath = PBJViewControllerVideoPath;
+
+// present
+[self addChildViewController:_videoPlayerController];
+[self.view addSubview:_videoPlayerController.view];
+[_videoPlayerController didMoveToParentViewController:self];
 ```
 
 ## License

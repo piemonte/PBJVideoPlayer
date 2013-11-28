@@ -33,9 +33,6 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 @property (nonatomic, readonly) PBJVideoPlayerPlaybackState playbackState;
 @property (nonatomic, readonly) PBJVideoPlayerBufferingState bufferingState;
 
-@property (nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
-
 - (void)playFromBeginning;
 - (void)play;
 - (void)pause;

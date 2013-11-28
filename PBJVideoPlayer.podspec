@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "PBJVideoPlayer"
   s.version      = "0.1.0"
-  s.summary      = "iOS video player, supports touch-to-play and swipe-to-scrub."
+  s.summary      = "iOS video player, supports touch-to-play."
   s.homepage     = "https://github.com/piemonte/PBJVideoPlayer"
   s.license      = "MIT"
   s.authors      = { "Patrick Piemonte" => "piemonte@alumni.cmu.edu" }
