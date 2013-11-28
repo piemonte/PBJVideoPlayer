@@ -1,5 +1,5 @@
 ## PBJVideoPlayer
-'PBJVideoPlayer' is an iOS video player, which features touch-to-play.
+'PBJVideoPlayer' is a simple iOS video player, featuring touch-to-play.
 
 It supports both iOS 6 and iOS 7 as well as 64-bit, and is capable of playing local and remote video files.
 
