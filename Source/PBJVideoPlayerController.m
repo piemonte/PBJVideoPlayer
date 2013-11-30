@@ -164,21 +164,16 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 
 #pragma mark - init
 
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super init];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // AVPlayer
         _player = [[AVPlayer alloc] init];
         _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
         
         // AVPlayer KVO
         [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
-        
-        // setup the internal views
-        _videoView = [[PBJVideoView alloc] initWithFrame:CGRectZero];
-        _videoView.videoFillMode = AVLayerVideoGravityResizeAspect;
-        _videoView.playerLayer.hidden = YES;
-        self.view = _videoView;
         
         // Application NSNotifications
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
@@ -208,6 +203,17 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 }
 
 #pragma mark - view lifecycle
+
+- (void)loadView
+{
+    [super loadView];
+    
+    // setup the internal views
+    _videoView = [[PBJVideoView alloc] initWithFrame:CGRectZero];
+    _videoView.videoFillMode = AVLayerVideoGravityResizeAspect;
+    _videoView.playerLayer.hidden = YES;
+    self.view = _videoView;
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
