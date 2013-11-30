@@ -47,6 +47,7 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
     // flags
     struct {
         unsigned int readyForPlayback:1;
+        unsigned int playbackLoops:1;
     } __block _flags;
 }
 
@@ -79,6 +80,24 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
     [self _setAsset:asset];
+}
+
+- (BOOL)playbackLoops
+{
+    return _flags.playbackLoops;
+}
+
+- (void)setPlaybackLoops:(BOOL)playbackLoops
+{
+    _flags.playbackLoops = (unsigned int)playbackLoops;
+    if (!_player)
+        return;
+    
+    if (!_flags.playbackLoops) {
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+    } else {
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+    }
 }
 
 - (void)_setAsset:(AVAsset *)asset
@@ -157,6 +176,12 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
         // notifications
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_playerItemDidPlayToEndTime:) name:AVPlayerItemDidPlayToEndTimeNotification object:_playerItem];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_playerItemFailedToPlayToEndTime:) name:AVPlayerItemFailedToPlayToEndTimeNotification object:_playerItem];
+    }
+    
+    if (!_flags.playbackLoops) {
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+    } else {
+        _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
     }
 
     [_player replaceCurrentItemWithPlayerItem:_playerItem];
@@ -343,7 +368,8 @@ typedef void (^PBJVideoPlayerBlock)();
 - (void)_playerItemDidPlayToEndTime:(NSNotification *)aNotification
 {
     [_player seekToTime:kCMTimeZero];
-    [self stop];
+    if (!_flags.playbackLoops)
+        [self stop];
 }
 
 - (void)_playerItemFailedToPlayToEndTime:(NSNotification *)aNotification
