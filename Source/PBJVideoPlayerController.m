@@ -121,7 +121,7 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
     NSArray *keys = @[PBJVideoPlayerControllerTracksKey, PBJVideoPlayerControllerPlayableKey, PBJVideoPlayerControllerDurationKey];
     
     [_asset loadValuesAsynchronouslyForKeys:keys completionHandler:^{
-        [self _executeBlockOnMainQueue:^{
+        [self _enqueueBlockOnMainQueue:^{
         
             // check the keys
             for (NSString *key in keys) {
@@ -314,8 +314,8 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 
 typedef void (^PBJVideoPlayerBlock)();
 
-- (void)_executeBlockOnMainQueue:(PBJVideoPlayerBlock)block {
-    dispatch_sync(dispatch_get_main_queue(), ^{
+- (void)_enqueueBlockOnMainQueue:(PBJVideoPlayerBlock)block {
+    dispatch_async(dispatch_get_main_queue(), ^{
         block();
     });
 }
