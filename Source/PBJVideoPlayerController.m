@@ -240,9 +240,9 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
     self.view = _videoView;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
     
     [_player pause];
 }
