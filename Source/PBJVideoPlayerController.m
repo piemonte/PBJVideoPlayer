@@ -244,7 +244,8 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
 {
     [super viewDidDisappear:animated];
     
-    [_player pause];
+    if (_playbackState == PBJVideoPlayerPlaybackStatePlaying)
+        [self pause];
 }
 
 #pragma mark - private methods
