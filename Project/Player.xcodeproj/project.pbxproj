@@ -10,9 +10,6 @@
 		06702B641832AD4A003BD34C /* PBJVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */; };
 		06702B651832AD4A003BD34C /* PBJVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B631832AD4A003BD34C /* PBJVideoView.m */; };
 		06702B671832B060003BD34C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06702B661832B060003BD34C /* AVFoundation.framework */; };
-		06702B6B1832B0C3003BD34C /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06702B681832B0C3003BD34C /* Base.xcconfig */; };
-		06702B6C1832B0C3003BD34C /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06702B691832B0C3003BD34C /* Debug.xcconfig */; };
-		06702B6D1832B0C3003BD34C /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06702B6A1832B0C3003BD34C /* Release.xcconfig */; };
 		06702B711832B58F003BD34C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B6E1832B58F003BD34C /* Default-568h@2x.png */; };
 		06702B721832B58F003BD34C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B6F1832B58F003BD34C /* Default.png */; };
 		06702B731832B58F003BD34C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B701832B58F003BD34C /* Default@2x.png */; };
@@ -173,7 +170,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PBJ;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Patrick Piemonte";
 			};
 			buildConfigurationList = 06EEFA831832AC2500E3499B /* Build configuration list for PBXProject "Player" */;
@@ -200,13 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06702B761832B78F003BD34C /* play_button@2x.png in Resources */,
-				06702B6D1832B0C3003BD34C /* Release.xcconfig in Resources */,
 				06702B721832B58F003BD34C /* Default.png in Resources */,
 				06EEFA961832AC2500E3499B /* InfoPlist.strings in Resources */,
-				06702B6B1832B0C3003BD34C /* Base.xcconfig in Resources */,
 				06702B711832B58F003BD34C /* Default-568h@2x.png in Resources */,
 				06702B731832B58F003BD34C /* Default@2x.png in Resources */,
-				06702B6C1832B0C3003BD34C /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
