@@ -273,10 +273,10 @@ static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.
     
     [_delegate videoPlayerPlaybackWillStartFromBeginning:self];
     [_player seekToTime:kCMTimeZero];
-    [self play];
+    [self playFromCurrentTime];
 }
 
-- (void)play
+- (void)playFromCurrentTime
 {
     DLog(@"playing...");
     
@@ -335,7 +335,7 @@ typedef void (^PBJVideoPlayerBlock)();
             }
             case PBJVideoPlayerPlaybackStatePaused:
             {
-                [self play];
+                [self playFromCurrentTime];
                 break;
             }
             case PBJVideoPlayerPlaybackStatePlaying:
@@ -360,7 +360,7 @@ typedef void (^PBJVideoPlayerBlock)();
     } else if (_playbackState == PBJVideoPlayerPlaybackStateStopped) {
         [self playFromBeginning];
     } else {
-        [self play];
+        [self playFromCurrentTime];
     }
 }
 
