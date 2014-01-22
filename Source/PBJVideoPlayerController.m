@@ -28,8 +28,9 @@ static NSString * const PBJVideoPlayerControllerRateKey = @"rate";
 static NSString * const PBJVideoPlayerControllerEmptyBufferKey = @"playbackBufferEmpty";
 static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLikelyToKeepUp";
 
-static NSInteger const PBJVideoPlayerRateCount = 6;
-static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.25, 0.5, 0.75, 1, 1.5, 2 };
+// TODO: scrubbing support
+//static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.25, 0.5, 0.75, 1, 1.5, 2 };
+//static NSInteger const PBJVideoPlayerRateCount = 6;
 
 @interface PBJVideoPlayerController () <
     UIGestureRecognizerDelegate>
