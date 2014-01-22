@@ -1,7 +1,7 @@
 ## PBJVideoPlayer
 'PBJVideoPlayer' is a simple iOS video player, featuring touch-to-play.
 
-It supports both iOS 6 and iOS 7 as well as 64-bit, and is capable of playing local and remote video files.
+When integrated, it provides a mobile app with the ability to play content whether it is local or on a remote server. The video player supports both iOS 6 and iOS 7 and is 64-bit compatible.
 
 Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/releases) for more information.
 

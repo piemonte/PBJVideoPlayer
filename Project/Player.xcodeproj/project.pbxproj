@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				06702B5F1832AD3A003BD34C /* PBJVideoPlayer */,
-				06EEFA911832AC2500E3499B /* Player */,
+				06EEFA911832AC2500E3499B /* App */,
 				06EEFA8A1832AC2500E3499B /* Frameworks */,
 				06EEFA891832AC2500E3499B /* Products */,
 			);
@@ -113,7 +113,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		06EEFA911832AC2500E3499B /* Player */ = {
+		06EEFA911832AC2500E3499B /* App */ = {
 			isa = PBXGroup;
 			children = (
 				06EEFA9A1832AC2500E3499B /* PBJAppDelegate.h */,
@@ -122,6 +122,7 @@
 				06EEFAA11832AC2500E3499B /* PBJViewController.m */,
 				06EEFA921832AC2500E3499B /* Supporting Files */,
 			);
+			name = App;
 			path = Player;
 			sourceTree = "<group>";
 		};
