@@ -25,7 +25,8 @@ pod 'PBJVideoPlayer'
 ```objective-c
 // allocate controller
 _videoPlayerController = [[PBJVideoPlayerController alloc] init];
-_videoPlayerController.delegate = self; _videoPlayerController.view.frame = self.view.bounds;
+_videoPlayerController.delegate = self;
+_videoPlayerController.view.frame = self.view.bounds;
 
 // setup media
 _videoPlayerController.videoPath = PBJViewControllerVideoPath;
