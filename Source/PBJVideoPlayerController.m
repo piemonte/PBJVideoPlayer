@@ -190,26 +190,6 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
 
 #pragma mark - init
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // AVPlayer
-        _player = [[AVPlayer alloc] init];
-        _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
-        
-        // AVPlayer KVO
-        [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
-        
-        // Application NSNotifications
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
-        [nc addObserver:self selector:@selector(_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
-        [nc addObserver:self selector:@selector(_applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
-        [nc addObserver:self selector:@selector(_applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-    }
-    return self;
-}
-
 - (void)dealloc
 {
     _videoView.player = nil;
@@ -232,13 +212,24 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
 
 - (void)loadView
 {
-    [super loadView];
-    
-    // setup the internal views
+    // AVPlayer
+    _player = [[AVPlayer alloc] init];
+    _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+
+    // AVPlayer KVO
+    [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
+
+    // load the view
     _videoView = [[PBJVideoView alloc] initWithFrame:CGRectZero];
     _videoView.videoFillMode = AVLayerVideoGravityResizeAspect;
     _videoView.playerLayer.hidden = YES;
     self.view = _videoView;
+    
+    // Application NSNotifications
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
+    [nc addObserver:self selector:@selector(_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [nc addObserver:self selector:@selector(_applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [nc addObserver:self selector:@selector(_applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
