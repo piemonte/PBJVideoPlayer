@@ -5,7 +5,7 @@ When integrated, it provides mobile apps with the ability to play content whethe
 
 Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/releases) for more information.
 
-If you have questions, [github issues](https://github.com/piemonte/PBJVideoPlayer/issues) is a great means to start a discussion, this allows others to benefit and chime in on the project too.
+If you have questions or ideas, the [github issues page](https://github.com/piemonte/PBJVideoPlayer/issues) is a great means to start a discussion but also this allows others to benefit and chime in on the project too.
 
 ## Installation
 
