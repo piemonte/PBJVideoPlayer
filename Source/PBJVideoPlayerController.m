@@ -101,6 +101,16 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     }
 }
 
+- (NSTimeInterval)maxDuration {
+    NSTimeInterval maxDuration = -1;
+    
+    if (CMTIME_IS_NUMERIC(_playerItem.duration)) {
+        maxDuration = CMTimeGetSeconds(_playerItem.duration);
+    }
+    
+    return maxDuration;
+}
+
 - (void)_setAsset:(AVAsset *)asset
 {
     if (_asset == asset)

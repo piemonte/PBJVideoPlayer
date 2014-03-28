@@ -57,6 +57,7 @@ static NSString * const PBJViewControllerVideoPath = @"https://d3hzrtb9p6to3i.cl
 
 - (void)videoPlayerReady:(PBJVideoPlayerController *)videoPlayer
 {
+    NSLog(@"Max duration of the video: %f", videoPlayer.maxDuration);
 }
 
 - (void)videoPlayerPlaybackStateDidChange:(PBJVideoPlayerController *)videoPlayer

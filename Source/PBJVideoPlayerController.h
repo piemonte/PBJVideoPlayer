@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 
 @property (nonatomic) NSString *videoPath;
 @property (nonatomic) BOOL playbackLoops;
+@property (nonatomic, readonly) NSTimeInterval maxDuration;
 
 @property (nonatomic, readonly) PBJVideoPlayerPlaybackState playbackState;
 @property (nonatomic, readonly) PBJVideoPlayerBufferingState bufferingState;
