@@ -27,7 +27,7 @@
 #import "PBJViewController.h"
 #import "PBJVideoPlayerController.h"
 
-static NSString * const PBJViewControllerVideoPath = @"https://d3hzrtb9p6to3i.cloudfront.net/a4/f3901f11b2a2f10082a78ce5482f2e/iphone-movie.mp4";
+static NSString * const PBJViewControllerVideoPath = @"http://distilleryvesper7-3.ak.instagram.com/fdc51d8ea73611e3a15612e740d32ce3_101.mp4";
 
 @interface PBJViewController () <
     PBJVideoPlayerControllerDelegate>
@@ -75,7 +75,7 @@ static NSString * const PBJViewControllerVideoPath = @"https://d3hzrtb9p6to3i.cl
 
 - (void)videoPlayerReady:(PBJVideoPlayerController *)videoPlayer
 {
-    NSLog(@"Max duration of the video: %f", videoPlayer.maxDuration);
+    //NSLog(@"Max duration of the video: %f", videoPlayer.maxDuration);
 }
 
 - (void)videoPlayerPlaybackStateDidChange:(PBJVideoPlayerController *)videoPlayer
