@@ -1,3 +1,5 @@
+![PBJVideoPlayer](https://raw.github.com/piemonte/PBJVideoPlayer/master/PBJVideoPlayer.gif)
+
 ## PBJVideoPlayer
 'PBJVideoPlayer' is a simple iOS video player, featuring touch-to-play.
 
