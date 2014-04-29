@@ -1,7 +1,7 @@
 ![PBJVideoPlayer](https://raw.github.com/piemonte/PBJVideoPlayer/master/PBJVideoPlayer.gif)
 
 ## PBJVideoPlayer
-'PBJVideoPlayer' is a simple iOS video player, featuring touch-to-play.
+`PBJVideoPlayer` is a simple iOS video player, featuring touch-to-play.
 
 When integrated, it provides mobile apps with the ability to play content whether it is local or on a remote server. The video player supports both iOS 6 and iOS 7 and is 64-bit compatible.
 
@@ -12,8 +12,6 @@ If you have questions or ideas, the [github issues page](https://github.com/piem
 ## Installation
 
 [CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just to add the following line to your `Podfile`:
-
-#### Podfile
 
 ```ruby
 pod 'PBJVideoPlayer'
