@@ -9,6 +9,8 @@ Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/r
 
 If you have questions or ideas, the [github issues page](https://github.com/piemonte/PBJVideoPlayer/issues) is a great means to start a discussion but also this allows others to benefit and chime in on the project too.
 
+[![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
+
 ## Installation
 
 [CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just to add the following line to your `Podfile`:
