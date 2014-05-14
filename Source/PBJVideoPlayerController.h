@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
     PBJVideoPlayerBufferingStateDelayed,
 };
 
-// PBJVideoPlayerController.view provides us with an interface for playing/streaming videos
+// PBJVideoPlayerController.view provides the interface for playing/streaming videos
 @protocol PBJVideoPlayerControllerDelegate;
 @interface PBJVideoPlayerController : UIViewController
 

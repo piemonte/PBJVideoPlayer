@@ -28,10 +28,13 @@
 #import <AVFoundation/AVFoundation.h>
 
 #define LOG_PLAYER 0
+
 #if !defined(NDEBUG) && LOG_PLAYER
+#ifndef DLog
 #   define DLog(fmt, ...) NSLog((@"player: " fmt), ##__VA_ARGS__);
 #else
 #   define DLog(...)
+#endif
 #endif
 
 static NSString * const PBJVideoPlayerObserverContext = @"PBJVideoPlayerObserverContext";
