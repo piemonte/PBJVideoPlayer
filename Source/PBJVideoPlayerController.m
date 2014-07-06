@@ -68,6 +68,7 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     struct {
         unsigned int readyForPlayback:1;
         unsigned int playbackLoops:1;
+        unsigned int playbackFreezesAtEnd:1;
     } __block _flags;
 }
 
@@ -118,6 +119,16 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     } else {
         _player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
     }
+}
+
+- (BOOL)playbackFreezesAtEnd
+{
+    return _flags.playbackFreezesAtEnd;
+}
+
+- (void)setPlaybackFreezesAtEnd:(BOOL)playbackFreezesAtEnd
+{
+    _flags.playbackFreezesAtEnd = (unsigned int)playbackFreezesAtEnd;
 }
 
 - (NSTimeInterval)maxDuration {
@@ -389,7 +400,9 @@ typedef void (^PBJVideoPlayerBlock)();
 
 - (void)_playerItemDidPlayToEndTime:(NSNotification *)aNotification
 {
-    [_player seekToTime:kCMTimeZero];
+    if (_flags.playbackLoops || !_flags.playbackFreezesAtEnd)
+        [_player seekToTime:kCMTimeZero];
+        
     if (!_flags.playbackLoops)
         [self stop];
 }
