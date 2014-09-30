@@ -36,9 +36,11 @@
 #endif
 #endif
 
+// KVO contexts
 static NSString * const PBJVideoPlayerObserverContext = @"PBJVideoPlayerObserverContext";
 static NSString * const PBJVideoPlayerItemObserverContext = @"PBJVideoPlayerItemObserverContext";
 
+// KVO keys
 static NSString * const PBJVideoPlayerControllerTracksKey = @"tracks";
 static NSString * const PBJVideoPlayerControllerStatusKey = @"status";
 static NSString * const PBJVideoPlayerControllerPlayableKey = @"playable";
@@ -440,11 +442,20 @@ typedef void (^PBJVideoPlayerBlock)();
     
     
     } else if ( context == (__bridge void *)(PBJVideoPlayerItemObserverContext) ) {
-    
-        if (_playerItem.playbackBufferEmpty) {
-            DLog(@"playback buffer is empty");
+        
+        if ([keyPath isEqualToString:PBJVideoPlayerControllerEmptyBufferKey]) {
+            if (_playerItem.playbackBufferEmpty) {
+                DLog(@"playback buffer is empty");
+            }
+        } else if ([keyPath isEqualToString:PBJVideoPlayerControllerPlayerKeepUpKey]) {
+            if (_playerItem.playbackLikelyToKeepUp) {
+                DLog(@"playback buffer is likely to keep up");
+                if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
+                    [self playFromCurrentTime];
+                }
+            }
         }
-
+        
         AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         switch (status)
         {
@@ -466,7 +477,7 @@ typedef void (^PBJVideoPlayerBlock)();
             default:
                 break;
         }
-        
+
     } else {
     
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
