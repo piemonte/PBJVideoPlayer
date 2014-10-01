@@ -465,7 +465,7 @@ typedef void (^PBJVideoPlayerBlock)();
             }
         }
         
-        AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
+        AVPlayerStatus status = [change[NSKeyValueChangeNewKey] integerValue];
         switch (status)
         {
             case AVPlayerStatusReadyToPlay:
