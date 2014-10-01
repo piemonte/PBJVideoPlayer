@@ -82,8 +82,17 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
 @synthesize videoPath = _videoPath;
 @synthesize playbackState = _playbackState;
 @synthesize bufferingState = _bufferingState;
+@synthesize videoFillMode = _videoFillMode;
 
 #pragma mark - getters/setters
+
+- (void)setVideoFillMode:(NSString *)videoFillMode
+{
+	if (_videoFillMode != videoFillMode) {
+		_videoFillMode = videoFillMode;
+		_videoView.videoFillMode = _videoFillMode;
+	}
+}
 
 - (NSString *)videoPath
 {
