@@ -355,16 +355,14 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 
 - (void)stop
 {
-    if (_playbackState != PBJVideoPlayerPlaybackStatePlaying)
-        return;
-
+    if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
+        [_player pause];
+    }
+    
     DLog(@"stop");
     
-    [_player pause];
     _playbackState = PBJVideoPlayerPlaybackStateStopped;
     [_delegate videoPlayerPlaybackStateDidChange:self];
-    
-    [_delegate videoPlayerPlaybackDidEnd:self];
 }
 
 #pragma mark - main queue helper
@@ -424,11 +422,14 @@ typedef void (^PBJVideoPlayerBlock)();
 
 - (void)_playerItemDidPlayToEndTime:(NSNotification *)aNotification
 {
-    if (_flags.playbackLoops || !_flags.playbackFreezesAtEnd)
+    if (_flags.playbackLoops || !_flags.playbackFreezesAtEnd) {
         [_player seekToTime:kCMTimeZero];
-        
-    if (!_flags.playbackLoops)
+    }
+    
+    if (!_flags.playbackLoops) {
         [self stop];
+        [_delegate videoPlayerPlaybackDidEnd:self];
+    }
 }
 
 - (void)_playerItemFailedToPlayToEndTime:(NSNotification *)aNotification
