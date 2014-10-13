@@ -39,15 +39,21 @@
 // KVO contexts
 static NSString * const PBJVideoPlayerObserverContext = @"PBJVideoPlayerObserverContext";
 static NSString * const PBJVideoPlayerItemObserverContext = @"PBJVideoPlayerItemObserverContext";
+static NSString * const PBJVideoPlayerLayerObserverContext = @"PBJVideoPlayerLayerObserverContext";
 
-// KVO keys
+// KVO player keys
 static NSString * const PBJVideoPlayerControllerTracksKey = @"tracks";
-static NSString * const PBJVideoPlayerControllerStatusKey = @"status";
 static NSString * const PBJVideoPlayerControllerPlayableKey = @"playable";
 static NSString * const PBJVideoPlayerControllerDurationKey = @"duration";
 static NSString * const PBJVideoPlayerControllerRateKey = @"rate";
+
+// KVO player item keys
+static NSString * const PBJVideoPlayerControllerStatusKey = @"status";
 static NSString * const PBJVideoPlayerControllerEmptyBufferKey = @"playbackBufferEmpty";
 static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLikelyToKeepUp";
+
+// KVO player layer keys
+static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisplay";
 
 // TODO: scrubbing support
 //static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.25, 0.5, 0.75, 1, 1.5, 2 };
@@ -206,6 +212,7 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     if (_playerItem == playerItem)
         return;
     
+    // remove observers
     if (_playerItem) {
         // AVPlayerItem KVO
         [_playerItem removeObserver:self forKeyPath:PBJVideoPlayerControllerEmptyBufferKey context:(__bridge void *)(PBJVideoPlayerItemObserverContext)];
@@ -219,6 +226,7 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     
     _playerItem = playerItem;
     
+    // add observers
     if (_playerItem) {
         // AVPlayerItem KVO
         [_playerItem addObserver:self forKeyPath:PBJVideoPlayerControllerEmptyBufferKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerItemObserverContext)];
@@ -249,6 +257,9 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
     // notifications
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
+    // Layer KVO
+    [_videoView.layer removeObserver:self forKeyPath:PBJVideoPlayerControllerReadyForDisplay context:(__bridge void *)PBJVideoPlayerLayerObserverContext];
+
     // AVPlayer KVO
     [_player removeObserver:self forKeyPath:PBJVideoPlayerControllerRateKey context:(__bridge void *)PBJVideoPlayerObserverContext];
 
@@ -263,18 +274,20 @@ static NSString * const PBJVideoPlayerControllerPlayerKeepUpKey = @"playbackLike
 
 - (void)loadView
 {
-    // AVPlayer
     _player = [[AVPlayer alloc] init];
     _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
 
-    // AVPlayer KVO
+    // Player KVO
     [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
 
-    // load the view
+    // load the playerLayer view
     _videoView = [[PBJVideoView alloc] initWithFrame:CGRectZero];
     _videoView.videoFillMode = AVLayerVideoGravityResizeAspect;
     _videoView.playerLayer.hidden = YES;
     self.view = _videoView;
+
+    // playerLayer KVO
+    [_videoView.playerLayer addObserver:self forKeyPath:PBJVideoPlayerControllerReadyForDisplay options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerLayerObserverContext)];
     
     // Application NSNotifications
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
@@ -449,8 +462,11 @@ typedef void (^PBJVideoPlayerBlock)();
 {
     if ( context == (__bridge void *)(PBJVideoPlayerObserverContext) ) {
     
+        // Player KVO
     
     } else if ( context == (__bridge void *)(PBJVideoPlayerItemObserverContext) ) {
+        
+        // PlayerItem KVO
         
         if ([keyPath isEqualToString:PBJVideoPlayerControllerEmptyBufferKey]) {
             if (_playerItem.playbackBufferEmpty) {
@@ -473,7 +489,6 @@ typedef void (^PBJVideoPlayerBlock)();
                 _videoView.playerLayer.backgroundColor = [[UIColor blackColor] CGColor];
                 [_videoView.playerLayer setPlayer:_player];
                 _videoView.playerLayer.hidden = NO;
-                [_delegate videoPlayerReady:self];
                 break;
             }
             case AVPlayerStatusFailed:
@@ -487,6 +502,16 @@ typedef void (^PBJVideoPlayerBlock)();
                 break;
         }
 
+    } else if ( context == (__bridge void *)(PBJVideoPlayerLayerObserverContext) ) {
+    
+        // PlayerLayer KVO
+        
+        if ([keyPath isEqualToString:PBJVideoPlayerControllerReadyForDisplay]) {
+            if (_videoView.playerLayer.readyForDisplay) {
+                [_delegate videoPlayerReady:self];
+            }
+        }
+    
     } else {
     
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
