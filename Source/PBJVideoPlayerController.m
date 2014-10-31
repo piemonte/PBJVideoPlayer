@@ -355,12 +355,12 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 
 - (void)stop
 {
-    if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
-        [_player pause];
-    }
+    if (_playbackState == PBJVideoPlayerPlaybackStateStopped)
+        return;
     
     DLog(@"stop");
-    
+
+    [_player pause];
     _playbackState = PBJVideoPlayerPlaybackStateStopped;
     [_delegate videoPlayerPlaybackStateDidChange:self];
 }
