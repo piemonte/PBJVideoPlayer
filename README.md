@@ -9,14 +9,6 @@ Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/r
 
 [![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
 
-## Community
-
-- Need help? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
-- Questions? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
-- Found a bug? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
-- Feature idea? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
-- Want to contribute? Submit a [pull request](https://github.com/piemonte/PBJVideoPlayer/pulls).
-
 ## Installation
 
 [CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just to add the following line to your `Podfile`:
@@ -44,6 +36,14 @@ _videoPlayerController.videoPath = PBJViewControllerVideoPath;
 [self.view addSubview:_videoPlayerController.view];
 [_videoPlayerController didMoveToParentViewController:self];
 ```
+
+## Community
+
+- Need help? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
+- Questions? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
+- Found a bug? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
+- Feature idea? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
+- Want to contribute? Submit a [pull request](https://github.com/piemonte/PBJVideoPlayer/pulls).
 
 ## Resources
 
