@@ -7,9 +7,15 @@ When integrated, it provides mobile apps with the ability to play content whethe
 
 Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/releases) for more information.
 
-If you have questions or ideas, the [github issues page](https://github.com/piemonte/PBJVideoPlayer/issues) is a great means to start a discussion but also this allows others to benefit and chime in on the project too.
-
 [![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
+
+## Community
+
+- Need help? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
+- Questions? Use [Stack Overflow](http://stackoverflow.com/questions/tagged/pbjvideoplayer) with the tag 'pbjvideoplayer'.
+- Found a bug? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
+- Feature idea? Open an [issue](https://github.com/piemonte/PBJVideoPlayer/issues).
+- Want to contribute? Submit a [pull request](https://github.com/piemonte/PBJVideoPlayer/pulls).
 
 ## Installation
 
