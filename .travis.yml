@@ -7,8 +7,7 @@ branches:
     - master
 
 before_install:
-  - export LANG=en_US.UTF-8
   - brew update
-  - brew upgrade xctool
+  - brew reinstall xctool
 
 script: xctool -project Project/Player.xcodeproj -scheme Debug -sdk iphonesimulator8.1 build analyze test
