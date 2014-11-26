@@ -43,16 +43,15 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 
 @property (nonatomic, weak) id<PBJVideoPlayerControllerDelegate> delegate;
 
-@property (nonatomic) NSString *videoPath;
+@property (nonatomic, copy) NSString *videoPath;
+@property (nonatomic, copy) NSString *videoFillMode; // default, AVLayerVideoGravityResizeAspect
+
 @property (nonatomic) BOOL playbackLoops;
 @property (nonatomic) BOOL playbackFreezesAtEnd;
-@property (nonatomic, readonly) NSTimeInterval maxDuration;
-
-// defaults to AVLayerVideoGravityResizeAspect
-@property (nonatomic, copy) NSString *videoFillMode;
-
 @property (nonatomic, readonly) PBJVideoPlayerPlaybackState playbackState;
 @property (nonatomic, readonly) PBJVideoPlayerBufferingState bufferingState;
+
+@property (nonatomic, readonly) NSTimeInterval maxDuration;
 
 - (void)playFromBeginning;
 - (void)playFromCurrentTime;

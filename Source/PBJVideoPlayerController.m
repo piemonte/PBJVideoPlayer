@@ -114,7 +114,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     if (!videoURL || ![videoURL scheme]) {
         videoURL = [NSURL fileURLWithPath:videoPath];
     }
-    _videoPath = videoPath;
+    _videoPath = [videoPath copy];
 
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
     [self _setAsset:asset];
