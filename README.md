@@ -1,11 +1,11 @@
 ![PBJVideoPlayer](https://raw.github.com/piemonte/PBJVideoPlayer/master/PBJVideoPlayer.gif)
 
 ## PBJVideoPlayer
-`PBJVideoPlayer` is a simple drop in component for playing and streaming media on iOS. It also provides easy loading and interaction customization.
+`PBJVideoPlayer` is a simple iOS video player library.
+
+It provides a quick means to play local and stream remote media on iOS, but also enables easy customization of loading and user interaction. The library is written in Objective-C and supports iOS 6 through iOS 8, and is also 64-bit compatible.
 
 If you're looking for a video player written in Swift, checkout [Player](https://github.com/piemonte/player).
-
-When integrated, it provides mobile apps with the ability to play content whether it is local or on a remote server. The video player supports both iOS 6 and iOS 7 and is 64-bit compatible.
 
 Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/releases) for more information.
 
@@ -55,4 +55,4 @@ _videoPlayerController.videoPath = PBJViewControllerVideoPath;
 
 ## License
 
-'PBJVideoPlayer' is available under the MIT license, see the [LICENSE](https://github.com/piemonte/PBJVideoPlayer/blob/master/LICENSE) file for more information.
+PBJVideoPlayer is available under the MIT license, see the [LICENSE](https://github.com/piemonte/PBJVideoPlayer/blob/master/LICENSE) file for more information.
