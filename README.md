@@ -50,7 +50,7 @@ _videoPlayerController.videoPath = PBJViewControllerVideoPath;
 ## Resources
 
 * [AV Foundation Programming Guide](https://developer.apple.com/library/ios/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
-* [Vision, iOS camera engine, features touch-to-record video, slow motion video, and photo capture](https://github.com/piemonte/PBJVision)
+* [PBJVision, iOS camera engine, features touch-to-record video, slow motion video, and photo capture](https://github.com/piemonte/PBJVision)
 * [Player, a simple iOS video player in Swift](https://github.com/piemonte/player)
 
 ## License
