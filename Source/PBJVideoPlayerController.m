@@ -74,7 +74,6 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     
     // flags
     struct {
-        unsigned int readyForPlayback:1;
         unsigned int playbackLoops:1;
         unsigned int playbackFreezesAtEnd:1;
     } __block _flags;
@@ -163,8 +162,6 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     if (_asset == asset)
         return;
     
-    _flags.readyForPlayback = NO;
-
     if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
         [self pause];
     }
@@ -445,10 +442,6 @@ typedef void (^PBJVideoPlayerBlock)();
 {
     if (_playbackState == PBJVideoPlayerPlaybackStatePlaying)
         [self pause];
-}
-
-- (void)_applicationWillEnterForeground:(NSNotification *)aNotfication
-{
 }
 
 - (void)_applicationDidEnterBackground:(NSNotification *)aNotfication
