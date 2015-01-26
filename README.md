@@ -10,6 +10,7 @@ If you're looking for a video player written in [Swift](https://developer.apple.
 Please review the [release history](https://github.com/piemonte/PBJVideoPlayer/releases) for more information.
 
 [![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
+[![Pod Version](https://img.shields.io/cocoapods/v/PBJVideoPlayer.svg?style=flat)](http://cocoadocs.org/docsets/PBJVideoPlayer/)
 
 ## Installation
 
