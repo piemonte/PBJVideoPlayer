@@ -3,7 +3,12 @@
 ## PBJVideoPlayer
 `PBJVideoPlayer` is a simple iOS video player library.
 
-It provides a quick means to play local and stream remote media on iOS, but also enables easy customization of loading and user interaction. The library is written in Objective-C and supports iOS 6 through iOS 8, and is also 64-bit compatible.
+### Features
+- [x] plays local media or streams remote media over HTTP
+- [x] customizable UI
+- [x] no size restrictions
+- [x] orientation change support
+- [x] simple API
 
 If you're looking for a video player written in [Swift](https://developer.apple.com/swift/), checkout [Player](https://github.com/piemonte/player).
 
