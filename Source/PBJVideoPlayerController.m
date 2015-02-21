@@ -167,6 +167,10 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     }
 
     _bufferingState = PBJVideoPlayerBufferingStateUnknown;
+    if ([_delegate respondsToSelector:@selector(videoPlayerBufferringStateDidChange:)]){
+        [_delegate videoPlayerBufferringStateDidChange:self];
+    }
+
     _asset = asset;
 
     if (!_asset) {
@@ -463,10 +467,18 @@ typedef void (^PBJVideoPlayerBlock)();
         
         if ([keyPath isEqualToString:PBJVideoPlayerControllerEmptyBufferKey]) {
             if (_playerItem.playbackBufferEmpty) {
+                _bufferingState = PBJVideoPlayerBufferingStateDelayed;
+                if ([_delegate respondsToSelector:@selector(videoPlayerBufferringStateDidChange:)]) {
+                    [_delegate videoPlayerBufferringStateDidChange:self];
+                }
                 DLog(@"playback buffer is empty");
             }
         } else if ([keyPath isEqualToString:PBJVideoPlayerControllerPlayerKeepUpKey]) {
             if (_playerItem.playbackLikelyToKeepUp) {
+                _bufferingState = PBJVideoPlayerBufferingStateReady;
+                if ([_delegate respondsToSelector:@selector(videoPlayerBufferringStateDidChange:)]) {
+                    [_delegate videoPlayerBufferringStateDidChange:self];
+                }
                 DLog(@"playback buffer is likely to keep up");
                 if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
                     [self playFromCurrentTime];
