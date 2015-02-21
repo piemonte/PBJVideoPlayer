@@ -81,25 +81,6 @@ static NSString * const PBJViewControllerVideoPath = @"http://distilleryvesper7-
 {
 }
 
-- (void)videoPlayerBufferringStateDidChange:(PBJVideoPlayerController *)videoPlayer
-{
-    /*switch (videoPlayer.bufferingState) {
-        case PBJVideoPlayerBufferingStateUnknown:
-            NSLog(@"Buffering state unknown!");
-            break;
-            
-        case PBJVideoPlayerBufferingStateReady:
-            NSLog(@"Buffering state Ready! Video will start/ready playing now.");
-            break;
-            
-        case PBJVideoPlayerBufferingStateDelayed:
-            NSLog(@"Buffering state Delayed! Video will pause/stop playing now.");
-            break;
-        default:
-            break;
-    }*/
-}
-
 - (void)videoPlayerPlaybackWillStartFromBeginning:(PBJVideoPlayerController *)videoPlayer
 {
     _playButton.alpha = 1.0f;
