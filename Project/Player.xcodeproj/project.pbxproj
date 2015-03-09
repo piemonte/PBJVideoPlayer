@@ -10,10 +10,8 @@
 		06702B641832AD4A003BD34C /* PBJVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */; };
 		06702B651832AD4A003BD34C /* PBJVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B631832AD4A003BD34C /* PBJVideoView.m */; };
 		06702B671832B060003BD34C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06702B661832B060003BD34C /* AVFoundation.framework */; };
-		06702B711832B58F003BD34C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B6E1832B58F003BD34C /* Default-568h@2x.png */; };
-		06702B721832B58F003BD34C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B6F1832B58F003BD34C /* Default.png */; };
-		06702B731832B58F003BD34C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B701832B58F003BD34C /* Default@2x.png */; };
 		06702B761832B78F003BD34C /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B751832B78F003BD34C /* play_button@2x.png */; };
+		06B5F45C1AAE06FC0042E391 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B5F45B1AAE06FC0042E391 /* Images.xcassets */; };
 		06EEFA8C1832AC2500E3499B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEFA8B1832AC2500E3499B /* Foundation.framework */; };
 		06EEFA8E1832AC2500E3499B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEFA8D1832AC2500E3499B /* CoreGraphics.framework */; };
 		06EEFA901832AC2500E3499B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEFA8F1832AC2500E3499B /* UIKit.framework */; };
@@ -32,10 +30,8 @@
 		06702B681832B0C3003BD34C /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = SOURCE_ROOT; };
 		06702B691832B0C3003BD34C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		06702B6A1832B0C3003BD34C /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = SOURCE_ROOT; };
-		06702B6E1832B58F003BD34C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		06702B6F1832B58F003BD34C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		06702B701832B58F003BD34C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		06702B751832B78F003BD34C /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@2x.png"; path = "UI/play_button@2x.png"; sourceTree = "<group>"; };
+		06702B751832B78F003BD34C /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@2x.png"; path = "Interface/play_button@2x.png"; sourceTree = "<group>"; };
+		06B5F45B1AAE06FC0042E391 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06EEFA881832AC2500E3499B /* Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EEFA8B1832AC2500E3499B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06EEFA8D1832AC2500E3499B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,12 +72,12 @@
 			name = PBJVideoPlayer;
 			sourceTree = "<group>";
 		};
-		06702B741832B789003BD34C /* UI */ = {
+		06702B741832B789003BD34C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
 				06702B751832B78F003BD34C /* play_button@2x.png */,
 			);
-			name = UI;
+			name = Interface;
 			sourceTree = "<group>";
 		};
 		06EEFA7F1832AC2500E3499B = {
@@ -129,13 +125,11 @@
 		06EEFA921832AC2500E3499B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				06702B741832B789003BD34C /* UI */,
+				06702B741832B789003BD34C /* Interface */,
+				06B5F45B1AAE06FC0042E391 /* Images.xcassets */,
 				06702B681832B0C3003BD34C /* Base.xcconfig */,
 				06702B691832B0C3003BD34C /* Debug.xcconfig */,
 				06702B6A1832B0C3003BD34C /* Release.xcconfig */,
-				06702B6E1832B58F003BD34C /* Default-568h@2x.png */,
-				06702B6F1832B58F003BD34C /* Default.png */,
-				06702B701832B58F003BD34C /* Default@2x.png */,
 				06EEFA931832AC2500E3499B /* Player-Info.plist */,
 				06EEFA941832AC2500E3499B /* InfoPlist.strings */,
 				06EEFA971832AC2500E3499B /* main.m */,
@@ -198,10 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				06702B761832B78F003BD34C /* play_button@2x.png in Resources */,
-				06702B721832B58F003BD34C /* Default.png in Resources */,
 				06EEFA961832AC2500E3499B /* InfoPlist.strings in Resources */,
-				06702B711832B58F003BD34C /* Default-568h@2x.png in Resources */,
-				06702B731832B58F003BD34C /* Default@2x.png in Resources */,
+				06B5F45C1AAE06FC0042E391 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +249,8 @@
 		06EEFABB1832AC2500E3499B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Player/Player-Prefix.pch";
 				INFOPLIST_FILE = "Player/Player-Info.plist";
@@ -268,6 +262,8 @@
 		06EEFABC1832AC2500E3499B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Player/Player-Prefix.pch";
 				INFOPLIST_FILE = "Player/Player-Info.plist";
