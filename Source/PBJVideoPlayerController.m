@@ -157,6 +157,14 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     return maxDuration;
 }
 
+- (float)volume {
+    return _player.volume;
+}
+
+- (void)setVolume:(float)volume {
+    _player.volume = volume;
+}
+
 - (void)_setAsset:(AVAsset *)asset
 {
     if (_asset == asset)
