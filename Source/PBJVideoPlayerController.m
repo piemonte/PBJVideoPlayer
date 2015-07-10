@@ -285,6 +285,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 {
     _player = [[AVPlayer alloc] init];
     _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
+    _player.volume = self.volume;
 
     // Player KVO
     [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
