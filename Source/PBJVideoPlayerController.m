@@ -169,6 +169,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     if (!_player) {
         return;
     }
+    
     _player.volume = volume;
 }
 
