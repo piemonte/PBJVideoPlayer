@@ -77,6 +77,8 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
         unsigned int playbackLoops:1;
         unsigned int playbackFreezesAtEnd:1;
     } __block _flags;
+    
+    float _volume;
 }
 
 @end
@@ -162,6 +164,11 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 }
 
 - (void)setVolume:(float)volume {
+    _volume = volume;
+    
+    if (!_player) {
+        return;
+    }
     _player.volume = volume;
 }
 
@@ -285,7 +292,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 {
     _player = [[AVPlayer alloc] init];
     _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
-    _player.volume = self.volume;
+    _player.volume = _volume;
 
     // Player KVO
     [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
