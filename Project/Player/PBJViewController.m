@@ -26,7 +26,7 @@
 #import "PBJViewController.h"
 #import "PBJVideoPlayerController.h"
 
-static NSString * const PBJViewControllerVideoPath = @"http://distilleryvesper7-3.ak.instagram.com/fdc51d8ea73611e3a15612e740d32ce3_101.mp4";
+static NSString * const PBJViewControllerVideoPath = @"https://scontent.cdninstagram.com/hphotos-xfa1/t50.2886-16/11719145_918467924880620_816495633_n.mp4";
 
 @interface PBJViewController () <
     PBJVideoPlayerControllerDelegate>
