@@ -175,8 +175,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 
 - (void)_setAsset:(AVAsset *)asset
 {
-    if (_asset == asset)
+    if (_asset == asset) {
         return;
+    }
     
     if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
         [self pause];
@@ -293,7 +294,6 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 {
     _player = [[AVPlayer alloc] init];
     _player.actionAtItemEnd = AVPlayerActionAtItemEndPause;
-    _player.volume = _volume;
 
     // Player KVO
     [_player addObserver:self forKeyPath:PBJVideoPlayerControllerRateKey options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:(__bridge void *)(PBJVideoPlayerObserverContext)];
