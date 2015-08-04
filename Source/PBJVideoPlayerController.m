@@ -121,6 +121,14 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     [self _setAsset:asset];
 }
 
+- (void)setAsset:(AVAsset *)asset {
+    [self _setAsset:asset];
+}
+
+- (AVAsset *)asset {
+    return _asset;
+}
+
 - (BOOL)playbackLoops
 {
     return _flags.playbackLoops;
