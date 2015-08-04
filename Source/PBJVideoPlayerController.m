@@ -118,7 +118,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     _videoPath = [videoPath copy];
 
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
-    [self _setAsset:asset];
+    [self setAsset:asset];
 }
 
 - (void)setAsset:(AVAsset *)asset {
@@ -404,7 +404,7 @@ typedef void (^PBJVideoPlayerBlock)();
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (_videoPath) {
+    if (_videoPath || _asset) {
         
         switch (_playbackState) {
             case PBJVideoPlayerPlaybackStateStopped:
