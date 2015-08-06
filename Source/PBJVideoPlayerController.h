@@ -23,6 +23,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 typedef NS_ENUM(NSInteger, PBJVideoPlayerPlaybackState) {
     PBJVideoPlayerPlaybackStateStopped = 0,
@@ -44,6 +45,8 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 @property (nonatomic, weak) id<PBJVideoPlayerControllerDelegate> delegate;
 
 @property (nonatomic, copy) NSString *videoPath;
+@property (nonatomic, copy) AVAsset *asset;
+
 @property (nonatomic, copy, setter=setVideoFillMode:) NSString *videoFillMode; // default, AVLayerVideoGravityResizeAspect
 
 @property (nonatomic) BOOL playbackLoops;
