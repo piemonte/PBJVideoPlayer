@@ -44,6 +44,7 @@
 		06EEFA9B1832AC2500E3499B /* PBJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBJAppDelegate.m; sourceTree = "<group>"; };
 		06EEFAA01832AC2500E3499B /* PBJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBJViewController.h; sourceTree = "<group>"; };
 		06EEFAA11832AC2500E3499B /* PBJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBJViewController.m; sourceTree = "<group>"; };
+		D8FA28DF1BC197640013BC26 /* PBJVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBJVideoPlayer.h; path = ../Source/PBJVideoPlayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		06702B5F1832AD3A003BD34C /* PBJVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D8FA28DF1BC197640013BC26 /* PBJVideoPlayer.h */,
 				06702B601832AD4A003BD34C /* PBJVideoPlayerController.h */,
 				06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */,
 				06702B621832AD4A003BD34C /* PBJVideoView.h */,

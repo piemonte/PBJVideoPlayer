@@ -25,7 +25,7 @@ pod 'PBJVideoPlayer'
 
 ## Usage
 ```objective-c
-#import "PBJVideoPlayerController.h"
+#import <PBJVideoPlayer/PBJVideoPlayer.h>
 ```
 
 ```objective-c
