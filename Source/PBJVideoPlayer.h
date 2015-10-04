@@ -1,7 +1,7 @@
 //
-//  PBJVideoView.h
+//  PBJVideoPlayer.h
 //
-//  Created by Patrick Piemonte on 5/27/13.
+//  Created by nathan spindel on 10/4/15.
 //  Copyright (c) 2013-present, Patrick Piemonte, http://patrickpiemonte.com
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,18 +22,5 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-
-// PBJVideoPlayerController provides this class via viewController.view, no need to allocate directly
-
-@class AVPlayer;
-@class AVPlayerLayer;
-@interface PBJVideoView : UIView
-
-@property (nonatomic) AVPlayer *player;
-@property (nonatomic, readonly) AVPlayerLayer *playerLayer;
-
-// defaults to AVLayerVideoGravityResizeAspect
-@property (nonatomic) NSString *videoFillMode;
-
-@end
+#import <PBJVideoPlayer/PBJVideoPlayerController.h>
+#import <PBJVideoPlayer/PBJVideoView.h>

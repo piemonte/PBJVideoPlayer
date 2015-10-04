@@ -25,13 +25,6 @@
 #import "PBJVideoView.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import <QuartzCore/QuartzCore.h>
-
-@interface PBJVideoView ()
-{
-}
-
-@end
 
 @implementation PBJVideoView
 
@@ -59,14 +52,12 @@
 
 - (void)setVideoFillMode:(NSString *)videoFillMode
 {
-    AVPlayerLayer *playerLayer = (AVPlayerLayer *)[self layer];
-	playerLayer.videoGravity = videoFillMode;
+	[self playerLayer].videoGravity = videoFillMode;
 }
 
 - (NSString *)videoFillMode
 {
-    AVPlayerLayer *playerLayer = (AVPlayerLayer *)[self layer];
-	return playerLayer.videoGravity;
+	return [self playerLayer].videoGravity;
 }
 
 #pragma mark - init

@@ -25,8 +25,6 @@
 #import "PBJVideoPlayerController.h"
 #import "PBJVideoView.h"
 
-#import <AVFoundation/AVFoundation.h>
-
 #define LOG_PLAYER 0
 #ifndef DLog
 #if !defined(NDEBUG) && LOG_PLAYER
@@ -59,8 +57,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 //static float const PBJVideoPlayerControllerRates[PBJVideoPlayerRateCount] = { 0.25, 0.5, 0.75, 1, 1.5, 2 };
 //static NSInteger const PBJVideoPlayerRateCount = 6;
 
-@interface PBJVideoPlayerController () <
-    UIGestureRecognizerDelegate>
+@interface PBJVideoPlayerController ()
 {
     AVAsset *_asset;
     AVPlayer *_player;
@@ -332,23 +329,6 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
         [self pause];
 }
 
-#pragma mark - private methods
-
-- (void)_videoPlayerAudioSessionActive:(BOOL)active
-{
-    NSString *category = active ? AVAudioSessionCategoryPlayback : AVAudioSessionCategoryAmbient;
-    
-    NSError *error = nil;
-    [[AVAudioSession sharedInstance] setCategory:category error:&error];
-    if (error) {
-        DLog(@"audio session active error (%@)", error);
-    }
-}
-
-- (void)_updatePlayerRatio
-{
-}
-
 #pragma mark - public methods
 
 - (void)playFromBeginning
@@ -433,17 +413,6 @@ typedef void (^PBJVideoPlayerBlock)();
         [super touchesEnded:touches withEvent:event];
     }
     
-}
-
-- (void)_handleTap:(UIGestureRecognizer *)gestureRecognizer
-{
-    if (_playbackState == PBJVideoPlayerPlaybackStatePlaying) {
-        [self pause];
-    } else if (_playbackState == PBJVideoPlayerPlaybackStateStopped) {
-        [self playFromBeginning];
-    } else {
-        [self playFromCurrentTime];
-    }
 }
 
 #pragma mark - AV NSNotificaions
