@@ -34,6 +34,6 @@
 @property (nonatomic, readonly) AVPlayerLayer *playerLayer;
 
 // defaults to AVLayerVideoGravityResizeAspect
-@property (nonatomic, readwrite) NSString *videoFillMode;
+@property (nonatomic) NSString *videoFillMode;
 
 @end
