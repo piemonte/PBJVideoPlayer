@@ -17,7 +17,7 @@ If you're looking for a video player written in [Swift](https://developer.apple.
 
 ## Installation
 
-[CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just to add the following line to your `Podfile`:
+[CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just add the following line to your `Podfile`:
 
 ```ruby
 pod 'PBJVideoPlayer'
@@ -30,17 +30,17 @@ pod 'PBJVideoPlayer'
 
 ```objective-c
 // allocate controller
-_videoPlayerController = [[PBJVideoPlayerController alloc] init];
-_videoPlayerController.delegate = self;
-_videoPlayerController.view.frame = self.view.bounds;
+PBJVideoPlayerController *videoPlayerController = [[PBJVideoPlayerController alloc] init];
+videoPlayerController.delegate = self;
+videoPlayerController.view.frame = self.view.bounds;
 
 // setup media
-_videoPlayerController.videoPath = PBJViewControllerVideoPath;
+videoPlayerController.videoPath = @"https://example.com/video.mp4";
 
 // present
-[self addChildViewController:_videoPlayerController];
-[self.view addSubview:_videoPlayerController.view];
-[_videoPlayerController didMoveToParentViewController:self];
+[self addChildViewController:videoPlayerController];
+[self.view addSubview:videoPlayerController.view];
+[videoPlayerController didMoveToParentViewController:self];
 ```
 
 ## Community
