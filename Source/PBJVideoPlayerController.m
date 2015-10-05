@@ -88,6 +88,8 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 @synthesize bufferingState = _bufferingState;
 @synthesize videoFillMode = _videoFillMode;
 
+@dynamic muted;
+
 #pragma mark - getters/setters
 
 - (void)setVideoFillMode:(NSString *)videoFillMode
@@ -179,6 +181,16 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     }
     
     _player.volume = volume;
+}
+
+- (BOOL)isMuted;
+{
+    return _player.muted;
+}
+
+- (void)setMuted:(BOOL)muted;
+{
+    _player.muted = muted;
 }
 
 - (void)_setAsset:(AVAsset *)asset

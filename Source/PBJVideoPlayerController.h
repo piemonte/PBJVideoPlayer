@@ -57,6 +57,7 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 @property (nonatomic, readonly) NSTimeInterval maxDuration;
 
 @property (nonatomic) float volume;
+@property (nonatomic, getter=isMuted) BOOL muted;
 
 - (void)playFromBeginning;
 - (void)playFromCurrentTime;
