@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
   s.authors = { 'patrick piemonte' => 'piemonte@alumni.cmu.edu' }
   s.source = { :git => "https://github.com/piemonte/PBJVideoPlayer.git", :tag => 'v0.2.4' }
   s.frameworks = 'Foundation', 'AVFoundation', 'CoreGraphics', 'QuartzCore', 'UIKit'
-  s.platform = :ios, '7.0'
+  s.ios.deployment_target = '7.0'
+  s.tvos.deplayment_target = '9.0'
   s.source_files = 'Source'
   s.requires_arc = true
   s.screenshot = "https://raw.github.com/piemonte/PBJVideoPlayer/master/PBJVideoPlayer.gif"
