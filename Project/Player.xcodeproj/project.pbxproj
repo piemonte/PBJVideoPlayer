@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A3E2CD1C1E587A00E60F90 /* PBJVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B631832AD4A003BD34C /* PBJVideoView.m */; };
+		04A3E2CE1C1E587D00E60F90 /* PBJVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */; };
+		04B39D4F1C1E5691009F4402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B39D4E1C1E5691009F4402 /* main.m */; };
+		04B39D521C1E5691009F4402 /* PBJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B39D511C1E5691009F4402 /* PBJAppDelegate.m */; };
+		04B39D551C1E5691009F4402 /* PBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B39D541C1E5691009F4402 /* PBJViewController.m */; };
+		04B39D5A1C1E5691009F4402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B39D591C1E5691009F4402 /* Assets.xcassets */; };
 		06702B641832AD4A003BD34C /* PBJVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */; };
 		06702B651832AD4A003BD34C /* PBJVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B631832AD4A003BD34C /* PBJVideoView.m */; };
 		06702B671832B060003BD34C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06702B661832B060003BD34C /* AVFoundation.framework */; };
@@ -21,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A3E2CC1C1E586800E60F90 /* PlayerTV-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlayerTV-Prefix.pch"; sourceTree = "<group>"; };
+		04B39D4B1C1E5691009F4402 /* PlayerTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B39D4E1C1E5691009F4402 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B39D501C1E5691009F4402 /* PBJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBJAppDelegate.h; sourceTree = "<group>"; };
+		04B39D511C1E5691009F4402 /* PBJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBJAppDelegate.m; sourceTree = "<group>"; };
+		04B39D531C1E5691009F4402 /* PBJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBJViewController.h; sourceTree = "<group>"; };
+		04B39D541C1E5691009F4402 /* PBJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBJViewController.m; sourceTree = "<group>"; };
+		04B39D591C1E5691009F4402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04B39D5B1C1E5691009F4402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06702B601832AD4A003BD34C /* PBJVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBJVideoPlayerController.h; path = ../Source/PBJVideoPlayerController.h; sourceTree = "<group>"; };
 		06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBJVideoPlayerController.m; path = ../Source/PBJVideoPlayerController.m; sourceTree = "<group>"; };
 		06702B621832AD4A003BD34C /* PBJVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBJVideoView.h; path = ../Source/PBJVideoView.h; sourceTree = "<group>"; };
@@ -46,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04B39D481C1E5691009F4402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06EEFA851832AC2500E3499B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +90,38 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		04A3E2CB1C1E573900E60F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04B39D591C1E5691009F4402 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		04B39D4C1C1E5691009F4402 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				04B39D501C1E5691009F4402 /* PBJAppDelegate.h */,
+				04B39D511C1E5691009F4402 /* PBJAppDelegate.m */,
+				04B39D531C1E5691009F4402 /* PBJViewController.h */,
+				04B39D541C1E5691009F4402 /* PBJViewController.m */,
+				04A3E2CB1C1E573900E60F90 /* Resources */,
+				04B39D4D1C1E5691009F4402 /* Supporting Files */,
+			);
+			name = tvOS;
+			path = PlayerTV;
+			sourceTree = "<group>";
+		};
+		04B39D4D1C1E5691009F4402 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04A3E2CC1C1E586800E60F90 /* PlayerTV-Prefix.pch */,
+				04B39D5B1C1E5691009F4402 /* Info.plist */,
+				04B39D4E1C1E5691009F4402 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		06702B5F1832AD3A003BD34C /* PBJVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +137,9 @@
 		06EEFA7F1832AC2500E3499B = {
 			isa = PBXGroup;
 			children = (
-				06EEFA911832AC2500E3499B /* iOS */,
 				06702B5F1832AD3A003BD34C /* PBJVideoPlayer */,
+				06EEFA911832AC2500E3499B /* iOS */,
+				04B39D4C1C1E5691009F4402 /* tvOS */,
 				06EEFA8A1832AC2500E3499B /* Frameworks */,
 				06EEFA891832AC2500E3499B /* Products */,
 			);
@@ -94,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				06EEFA881832AC2500E3499B /* Player.app */,
+				04B39D4B1C1E5691009F4402 /* PlayerTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +196,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		04B39D4A1C1E5691009F4402 /* PlayerTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B39D5C1C1E5691009F4402 /* Build configuration list for PBXNativeTarget "PlayerTV" */;
+			buildPhases = (
+				04B39D471C1E5691009F4402 /* Sources */,
+				04B39D481C1E5691009F4402 /* Frameworks */,
+				04B39D491C1E5691009F4402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayerTV;
+			productName = PlayerTV;
+			productReference = 04B39D4B1C1E5691009F4402 /* PlayerTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		06EEFA871832AC2500E3499B /* Player */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06EEFABA1832AC2500E3499B /* Build configuration list for PBXNativeTarget "Player" */;
@@ -164,8 +237,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PBJ;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Patrick Piemonte";
+				TargetAttributes = {
+					04B39D4A1C1E5691009F4402 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
 			};
 			buildConfigurationList = 06EEFA831832AC2500E3499B /* Build configuration list for PBXProject "Player" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -181,11 +260,20 @@
 			projectRoot = "";
 			targets = (
 				06EEFA871832AC2500E3499B /* Player */,
+				04B39D4A1C1E5691009F4402 /* PlayerTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04B39D491C1E5691009F4402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B39D5A1C1E5691009F4402 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06EEFA861832AC2500E3499B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +286,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04B39D471C1E5691009F4402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A3E2CE1C1E587D00E60F90 /* PBJVideoPlayerController.m in Sources */,
+				04B39D551C1E5691009F4402 /* PBJViewController.m in Sources */,
+				04B39D521C1E5691009F4402 /* PBJAppDelegate.m in Sources */,
+				04B39D4F1C1E5691009F4402 /* main.m in Sources */,
+				04A3E2CD1C1E587A00E60F90 /* PBJVideoView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06EEFA841832AC2500E3499B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +324,96 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04B39D5D1C1E5691009F4402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PlayerTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.PlayerTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		04B39D5E1C1E5691009F4402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PlayerTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.PlayerTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		06EEFAB81832AC2500E3499B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06702B691832B0C3003BD34C /* Debug.xcconfig */;
@@ -273,6 +463,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04B39D5C1C1E5691009F4402 /* Build configuration list for PBXNativeTarget "PlayerTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B39D5D1C1E5691009F4402 /* Debug */,
+				04B39D5E1C1E5691009F4402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		06EEFA831832AC2500E3499B /* Build configuration list for PBXProject "Player" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
