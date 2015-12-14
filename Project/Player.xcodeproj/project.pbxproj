@@ -10,7 +10,6 @@
 		06702B641832AD4A003BD34C /* PBJVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B611832AD4A003BD34C /* PBJVideoPlayerController.m */; };
 		06702B651832AD4A003BD34C /* PBJVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06702B631832AD4A003BD34C /* PBJVideoView.m */; };
 		06702B671832B060003BD34C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06702B661832B060003BD34C /* AVFoundation.framework */; };
-		06702B761832B78F003BD34C /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06702B751832B78F003BD34C /* play_button@2x.png */; };
 		06B5F45C1AAE06FC0042E391 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B5F45B1AAE06FC0042E391 /* Images.xcassets */; };
 		06EEFA8C1832AC2500E3499B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEFA8B1832AC2500E3499B /* Foundation.framework */; };
 		06EEFA8E1832AC2500E3499B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EEFA8D1832AC2500E3499B /* CoreGraphics.framework */; };
@@ -30,7 +29,6 @@
 		06702B681832B0C3003BD34C /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = SOURCE_ROOT; };
 		06702B691832B0C3003BD34C /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		06702B6A1832B0C3003BD34C /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = SOURCE_ROOT; };
-		06702B751832B78F003BD34C /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@2x.png"; path = "Interface/play_button@2x.png"; sourceTree = "<group>"; };
 		06B5F45B1AAE06FC0042E391 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06EEFA881832AC2500E3499B /* Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EEFA8B1832AC2500E3499B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04302DF31C1E507E00DAE69D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06B5F45B1AAE06FC0042E391 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		06702B5F1832AD3A003BD34C /* PBJVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,18 +80,10 @@
 			name = PBJVideoPlayer;
 			sourceTree = "<group>";
 		};
-		06702B741832B789003BD34C /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				06702B751832B78F003BD34C /* play_button@2x.png */,
-			);
-			name = Interface;
-			sourceTree = "<group>";
-		};
 		06EEFA7F1832AC2500E3499B = {
 			isa = PBXGroup;
 			children = (
-				06EEFA911832AC2500E3499B /* App */,
+				06EEFA911832AC2500E3499B /* iOS */,
 				06702B5F1832AD3A003BD34C /* PBJVideoPlayer */,
 				06EEFA8A1832AC2500E3499B /* Frameworks */,
 				06EEFA891832AC2500E3499B /* Products */,
@@ -111,24 +109,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		06EEFA911832AC2500E3499B /* App */ = {
+		06EEFA911832AC2500E3499B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				06EEFA9A1832AC2500E3499B /* PBJAppDelegate.h */,
 				06EEFA9B1832AC2500E3499B /* PBJAppDelegate.m */,
 				06EEFAA01832AC2500E3499B /* PBJViewController.h */,
 				06EEFAA11832AC2500E3499B /* PBJViewController.m */,
+				04302DF31C1E507E00DAE69D /* Resources */,
 				06EEFA921832AC2500E3499B /* Supporting Files */,
 			);
-			name = App;
+			name = iOS;
 			path = Player;
 			sourceTree = "<group>";
 		};
 		06EEFA921832AC2500E3499B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				06702B741832B789003BD34C /* Interface */,
-				06B5F45B1AAE06FC0042E391 /* Images.xcassets */,
 				06702B681832B0C3003BD34C /* Base.xcconfig */,
 				06702B691832B0C3003BD34C /* Debug.xcconfig */,
 				06702B6A1832B0C3003BD34C /* Release.xcconfig */,
@@ -193,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06702B761832B78F003BD34C /* play_button@2x.png in Resources */,
 				06EEFA961832AC2500E3499B /* InfoPlist.strings in Resources */,
 				06B5F45C1AAE06FC0042E391 /* Images.xcassets in Resources */,
 			);
