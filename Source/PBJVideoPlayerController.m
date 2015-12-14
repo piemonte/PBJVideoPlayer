@@ -225,7 +225,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
                 AVKeyValueStatus keyStatus = [asset statusOfValueForKey:key error:&error];
                 if (keyStatus == AVKeyValueStatusFailed) {
                     _playbackState = PBJVideoPlayerPlaybackStateFailed;
-                    [_delegate videoPlayerPlaybackStateDidChange:self];
+                    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]){
+                        [_delegate videoPlayerPlaybackStateDidChange:self];
+                    }
                     return;
                 }
             }
@@ -233,7 +235,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
             // check playable
             if (!_asset.playable) {
                 _playbackState = PBJVideoPlayerPlaybackStateFailed;
-                [_delegate videoPlayerPlaybackStateDidChange:self];
+                if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]){
+                    [_delegate videoPlayerPlaybackStateDidChange:self];
+                }
                 return;
             }
 
@@ -347,7 +351,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 {
     DLog(@"playing from beginnging...");
     
-    [_delegate videoPlayerPlaybackWillStartFromBeginning:self];
+    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackWillStartFromBeginning:)]) {
+        [_delegate videoPlayerPlaybackWillStartFromBeginning:self];
+    }
     [_player seekToTime:kCMTimeZero];
     [self playFromCurrentTime];
 }
@@ -357,7 +363,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     DLog(@"playing...");
     
     _playbackState = PBJVideoPlayerPlaybackStatePlaying;
-    [_delegate videoPlayerPlaybackStateDidChange:self];
+    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]) {
+        [_delegate videoPlayerPlaybackStateDidChange:self];
+    }
     [_player play];
 }
 
@@ -370,7 +378,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     
     [_player pause];
     _playbackState = PBJVideoPlayerPlaybackStatePaused;
-    [_delegate videoPlayerPlaybackStateDidChange:self];
+    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]) {
+        [_delegate videoPlayerPlaybackStateDidChange:self];
+    }
 }
 
 - (void)stop
@@ -382,7 +392,9 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 
     [_player pause];
     _playbackState = PBJVideoPlayerPlaybackStateStopped;
-    [_delegate videoPlayerPlaybackStateDidChange:self];
+    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]) {
+        [_delegate videoPlayerPlaybackStateDidChange:self];
+    }
 }
 
 #pragma mark - main queue helper
@@ -437,14 +449,18 @@ typedef void (^PBJVideoPlayerBlock)();
     
     if (!_flags.playbackLoops) {
         [self stop];
-        [_delegate videoPlayerPlaybackDidEnd:self];
+        if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackDidEnd:)]) {
+            [_delegate videoPlayerPlaybackDidEnd:self];
+        }
     }
 }
 
 - (void)_playerItemFailedToPlayToEndTime:(NSNotification *)aNotification
 {
     _playbackState = PBJVideoPlayerPlaybackStateFailed;
-    [_delegate videoPlayerPlaybackStateDidChange:self];
+    if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]) {
+        [_delegate videoPlayerPlaybackStateDidChange:self];
+    }
     DLog(@"error (%@)", [[aNotification userInfo] objectForKey:AVPlayerItemFailedToPlayToEndTimeErrorKey]);
 }
 
@@ -508,7 +524,9 @@ typedef void (^PBJVideoPlayerBlock)();
             case AVPlayerStatusFailed:
             {
                 _playbackState = PBJVideoPlayerPlaybackStateFailed;
-                [_delegate videoPlayerPlaybackStateDidChange:self];
+                if ([_delegate respondsToSelector:@selector(videoPlayerPlaybackStateDidChange:)]) {
+                    [_delegate videoPlayerPlaybackStateDidChange:self];
+                }
                 break;
             }
             case AVPlayerStatusUnknown:
@@ -522,7 +540,9 @@ typedef void (^PBJVideoPlayerBlock)();
         
         if ([keyPath isEqualToString:PBJVideoPlayerControllerReadyForDisplay]) {
             if (_videoView.playerLayer.readyForDisplay) {
-                [_delegate videoPlayerReady:self];
+                if ([_delegate respondsToSelector:@selector(videoPlayerReady:)]) {
+                    [_delegate videoPlayerReady:self];
+                }
             }
         }
     
