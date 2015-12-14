@@ -1,7 +1,7 @@
 ![PBJVideoPlayer](https://raw.github.com/piemonte/PBJVideoPlayer/master/PBJVideoPlayer.gif)
 
 ## PBJVideoPlayer
-`PBJVideoPlayer` is a simple iOS video player library.
+`PBJVideoPlayer` is a simple video player library for iOS and tvOS.
 
 ### Features
 - [x] plays local media or streams remote media over HTTP
