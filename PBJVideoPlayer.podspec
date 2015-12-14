@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'PBJVideoPlayer'
   s.version = '0.3.0'
-  s.summary = 'iOS video player, simple drop in component featuring touch-to-play'
+  s.summary = 'simple video player library for iOS and tvOS, featuring touch-to-play'
   s.homepage = 'https://github.com/piemonte/PBJVideoPlayer'
   s.social_media_url = 'http://twitter.com/piemonte'
   s.license = 'MIT'
