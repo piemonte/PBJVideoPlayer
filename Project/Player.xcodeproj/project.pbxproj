@@ -101,8 +101,7 @@
 		04B39D4C1C1E5691009F4402 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				04B39D501C1E5691009F4402 /* PBJAppDelegate.h */,
-				04B39D511C1E5691009F4402 /* PBJAppDelegate.m */,
+				06D8BD871C3995E300DBE44E /* App */,
 				04B39D531C1E5691009F4402 /* PBJViewController.h */,
 				04B39D541C1E5691009F4402 /* PBJViewController.m */,
 				04A3E2CB1C1E573900E60F90 /* Resources */,
@@ -117,7 +116,6 @@
 			children = (
 				04A3E2CC1C1E586800E60F90 /* PlayerTV-Prefix.pch */,
 				04B39D5B1C1E5691009F4402 /* Info.plist */,
-				04B39D4E1C1E5691009F4402 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,6 +130,26 @@
 				06702B631832AD4A003BD34C /* PBJVideoView.m */,
 			);
 			name = PBJVideoPlayer;
+			sourceTree = "<group>";
+		};
+		06D8BD871C3995E300DBE44E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				04B39D501C1E5691009F4402 /* PBJAppDelegate.h */,
+				04B39D511C1E5691009F4402 /* PBJAppDelegate.m */,
+				04B39D4E1C1E5691009F4402 /* main.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		06D8BD881C3995EE00DBE44E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				06EEFA9A1832AC2500E3499B /* PBJAppDelegate.h */,
+				06EEFA9B1832AC2500E3499B /* PBJAppDelegate.m */,
+				06EEFA971832AC2500E3499B /* main.m */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 		06EEFA7F1832AC2500E3499B = {
@@ -168,8 +186,7 @@
 		06EEFA911832AC2500E3499B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				06EEFA9A1832AC2500E3499B /* PBJAppDelegate.h */,
-				06EEFA9B1832AC2500E3499B /* PBJAppDelegate.m */,
+				06D8BD881C3995EE00DBE44E /* App */,
 				06EEFAA01832AC2500E3499B /* PBJViewController.h */,
 				06EEFAA11832AC2500E3499B /* PBJViewController.m */,
 				04302DF31C1E507E00DAE69D /* Resources */,
@@ -187,7 +204,6 @@
 				06702B6A1832B0C3003BD34C /* Release.xcconfig */,
 				06EEFA931832AC2500E3499B /* Player-Info.plist */,
 				06EEFA941832AC2500E3499B /* InfoPlist.strings */,
-				06EEFA971832AC2500E3499B /* main.m */,
 				06EEFA991832AC2500E3499B /* Player-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -344,6 +360,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -392,6 +409,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
