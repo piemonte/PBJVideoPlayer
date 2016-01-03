@@ -7,9 +7,10 @@ env:
 before_install:
   - brew update
   - brew reinstall xctool
-xcode_scheme: Debug
 xcode_sdk:
   - iphonesimulator9.2
+  - appletvsimulator9.1
 script:
   - xcodebuild -showsdks
-  - xctool -project Project/Player.xcodeproj -scheme Debug -sdk iphonesimulator9.2 build analyze
+  - xctool -project Project/Player.xcodeproj -scheme "Debug - iOS" -sdk iphonesimulator9.2 build analyze
+  - xctool -project Project/Player.xcodeproj -scheme "Debug - tvOS" -sdk appletvsimulator9.1 build analyze
