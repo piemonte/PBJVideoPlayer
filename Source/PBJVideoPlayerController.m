@@ -349,7 +349,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
      {
          if([weakSelf.delegate respondsToSelector:@selector(videoPlayerController:playBackProgress:)])
          {
-             [weakSelf.delegate videoPlayerController:weakSelf playBackProgress:CMTimeGetSeconds(time)];
+             [weakSelf.delegate videoPlayerController:weakSelf playBackProgress:(CGFloat)CMTimeGetSeconds(time)];
          }
      }];
 }
