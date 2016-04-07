@@ -84,25 +84,6 @@ static NSString * const PBJViewControllerVideoPath = @"https://scontent.cdninsta
 {
 }
 
-- (void)videoPlayerBufferringStateDidChange:(PBJVideoPlayerController *)videoPlayer
-{
-    /*switch (videoPlayer.bufferingState) {
-     case PBJVideoPlayerBufferingStateUnknown:
-     NSLog(@"Buffering state unknown!");
-     break;
-     
-     case PBJVideoPlayerBufferingStateReady:
-     NSLog(@"Buffering state Ready! Video will start/ready playing now.");
-     break;
-     
-     case PBJVideoPlayerBufferingStateDelayed:
-     NSLog(@"Buffering state Delayed! Video will pause/stop playing now.");
-     break;
-     default:
-     break;
-     }*/
-}
-
 - (void)videoPlayerPlaybackWillStartFromBeginning:(PBJVideoPlayerController *)videoPlayer
 {
     _playButton.alpha = 1.0f;
@@ -123,6 +104,32 @@ static NSString * const PBJViewControllerVideoPath = @"https://scontent.cdninsta
         _playButton.alpha = 1.0f;
     } completion:^(BOOL finished) {
     }];
+}
+
+- (void)videoPlayerBufferringStateDidChange:(PBJVideoPlayerController *)videoPlayer
+{
+    /*switch (videoPlayer.bufferingState) {
+     case PBJVideoPlayerBufferingStateUnknown:
+     NSLog(@"Buffering state unknown!");
+     break;
+     
+     case PBJVideoPlayerBufferingStateReady:
+     NSLog(@"Buffering state Ready! Video will start/ready playing now.");
+     break;
+     
+     case PBJVideoPlayerBufferingStateDelayed:
+     NSLog(@"Buffering state Delayed! Video will pause/stop playing now.");
+     break;
+     default:
+     break;
+     }*/
+}
+
+- (void)videoPlayer:(PBJVideoPlayerController *)videoPlayer didUpdatePlayBackProgress:(CGFloat)progress {
+}
+
+- (CMTime)videoPlayerTimeIntervalForPlaybackProgress:(PBJVideoPlayerController *)videoPlayer {
+    return CMTimeMake(5, 25);
 }
 
 @end
