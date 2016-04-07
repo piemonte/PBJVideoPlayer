@@ -335,6 +335,23 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];        
     [nc addObserver:self selector:@selector(_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [nc addObserver:self selector:@selector(_applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    __weak PBJVideoPlayerController *weakSelf = self;
+    
+    CMTime timeInterval = CMTimeMake(5, 25);
+    if([self.delegate respondsToSelector:@selector(videoPlayerControllerTimeInterValForPlaybackProgress:)])
+    {
+        timeInterval = [self.delegate videoPlayerControllerTimeInterValForPlaybackProgress:self];
+    }
+    [_player addPeriodicTimeObserverForInterval:timeInterval
+                                               queue:dispatch_get_main_queue()
+                                          usingBlock:^(CMTime time)
+     {
+         if([weakSelf.delegate respondsToSelector:@selector(videoPlayerController:playBackProgress:)])
+         {
+             [weakSelf.delegate videoPlayerController:weakSelf playBackProgress:(CGFloat)CMTimeGetSeconds(time)];
+         }
+     }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

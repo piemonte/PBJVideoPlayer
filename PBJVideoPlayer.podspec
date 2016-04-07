@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'http://twitter.com/piemonte'
   s.license = 'MIT'
   s.authors = { 'patrick piemonte' => 'piemonte@alumni.cmu.edu' }
-  s.source = { :git => "https://github.com/piemonte/PBJVideoPlayer.git", :tag => 'v0.3.0' }
+  s.source = { :git => "https://github.com/piemonte/PBJVideoPlayer.git", :tag => 'v0.3.1' }
   s.frameworks = 'Foundation', 'AVFoundation', 'CoreGraphics', 'QuartzCore', 'UIKit'
   s.ios.deployment_target = '7.0'
   s.tvos.deployment_target = '9.0'
