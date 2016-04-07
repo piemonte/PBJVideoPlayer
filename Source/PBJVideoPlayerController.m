@@ -76,6 +76,7 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     } __block _flags;
     
     float _volume;
+    id<NSObject> _timeObserver;
 }
 
 @end
@@ -305,11 +306,16 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     // AVPlayer KVO
     [_player removeObserver:self forKeyPath:PBJVideoPlayerControllerRateKey context:(__bridge void *)PBJVideoPlayerObserverContext];
 
+    // player time observer
+    if (_timeObserver) {
+        [_player removeTimeObserver:_timeObserver];
+    }
+    
     // player
     [_player pause];
     
     // player item
-    [self _setPlayerItem:nil];
+    [self _setPlayerItem:nil];    
 }
 
 #pragma mark - view lifecycle
@@ -336,22 +342,22 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
     [nc addObserver:self selector:@selector(_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [nc addObserver:self selector:@selector(_applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
-    __weak PBJVideoPlayerController *weakSelf = self;
-    
+    // time observer
     CMTime timeInterval = CMTimeMake(5, 25);
-    if([self.delegate respondsToSelector:@selector(videoPlayerControllerTimeInterValForPlaybackProgress:)])
-    {
-        timeInterval = [self.delegate videoPlayerControllerTimeInterValForPlaybackProgress:self];
+    if ([self.delegate respondsToSelector:@selector(videoPlayerTimeIntervalForPlaybackProgress:)]) {
+        timeInterval = [self.delegate videoPlayerTimeIntervalForPlaybackProgress:self];
     }
-    [_player addPeriodicTimeObserverForInterval:timeInterval
-                                               queue:dispatch_get_main_queue()
-                                          usingBlock:^(CMTime time)
-     {
-         if([weakSelf.delegate respondsToSelector:@selector(videoPlayerController:playBackProgress:)])
-         {
-             [weakSelf.delegate videoPlayerController:weakSelf playBackProgress:(CGFloat)CMTimeGetSeconds(time)];
-         }
-     }];
+
+    __block __weak __typeof(self) me = self;
+    if ([me.delegate respondsToSelector:@selector(videoPlayer:didUpdatePlayBackProgress:)]) {
+        _timeObserver = [_player addPeriodicTimeObserverForInterval:timeInterval
+                                                   queue:dispatch_get_main_queue()
+                                              usingBlock:^(CMTime time)
+        {
+            if ([me.delegate respondsToSelector:@selector(videoPlayer:didUpdatePlayBackProgress:)])
+                [me.delegate videoPlayer:me didUpdatePlayBackProgress:(CGFloat)CMTimeGetSeconds(time)];
+        }];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
