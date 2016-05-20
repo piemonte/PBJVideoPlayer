@@ -59,8 +59,6 @@ static NSString * const PBJVideoPlayerControllerReadyForDisplay = @"readyForDisp
 
 @interface PBJVideoPlayerController ()
 {
-    AVAsset *_asset;
-    AVPlayer *_player;
     AVPlayerItem *_playerItem;
 
     NSString *_videoPath;

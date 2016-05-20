@@ -40,7 +40,11 @@ typedef NS_ENUM(NSInteger, PBJVideoPlayerBufferingState) {
 
 // PBJVideoPlayerController.view provides the interface for playing/streaming videos
 @protocol PBJVideoPlayerControllerDelegate;
-@interface PBJVideoPlayerController : UIViewController
+@interface PBJVideoPlayerController : UIViewController {
+@private
+    AVPlayer *_player;
+    AVAsset *_asset;
+}
 
 @property (nonatomic, weak) id<PBJVideoPlayerControllerDelegate> delegate;
 
