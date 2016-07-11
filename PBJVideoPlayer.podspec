@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name = 'PBJVideoPlayer'
-  s.version = '0.3.1'
+  s.version = '0.3.2'
   s.summary = 'simple video player library for iOS and tvOS, featuring touch-to-play'
   s.homepage = 'https://github.com/piemonte/PBJVideoPlayer'
   s.social_media_url = 'http://twitter.com/piemonte'
   s.license = 'MIT'
   s.authors = { 'patrick piemonte' => 'piemonte@alumni.cmu.edu' }
-  s.source = { :git => "https://github.com/piemonte/PBJVideoPlayer.git", :tag => 'v0.3.1' }
+  s.source = { :git => "https://github.com/piemonte/PBJVideoPlayer.git", :tag => 'v0.3.2' }
   s.frameworks = 'Foundation', 'AVFoundation', 'CoreGraphics', 'QuartzCore', 'UIKit'
   s.ios.deployment_target = '7.0'
   s.tvos.deployment_target = '9.0'
