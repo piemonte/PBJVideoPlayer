@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04B39D371C1E55C5009F4402"
+               BlueprintIdentifier = "04B39D4A1C1E5691009F4402"
                BuildableName = "PlayerTV.app"
                BlueprintName = "PlayerTV"
                ReferencedContainer = "container:Player.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04B39D371C1E55C5009F4402"
+            BlueprintIdentifier = "04B39D4A1C1E5691009F4402"
             BuildableName = "PlayerTV.app"
             BlueprintName = "PlayerTV"
             ReferencedContainer = "container:Player.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04B39D371C1E55C5009F4402"
+            BlueprintIdentifier = "04B39D4A1C1E5691009F4402"
             BuildableName = "PlayerTV.app"
             BlueprintName = "PlayerTV"
             ReferencedContainer = "container:Player.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "04B39D371C1E55C5009F4402"
+            BlueprintIdentifier = "04B39D4A1C1E5691009F4402"
             BuildableName = "PlayerTV.app"
             BlueprintName = "PlayerTV"
             ReferencedContainer = "container:Player.xcodeproj">

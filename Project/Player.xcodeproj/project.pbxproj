@@ -254,7 +254,7 @@
 			attributes = {
 				CLASSPREFIX = PBJ;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Patrick Piemonte";
 				TargetAttributes = {
 					04B39D4A1C1E5691009F4402 = {
