@@ -6,16 +6,16 @@
 [![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
 [![Pod Version](https://img.shields.io/cocoapods/v/PBJVideoPlayer.svg?style=flat)](http://cocoadocs.org/docsets/PBJVideoPlayer/)
 
+- Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
+- Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
+- Looking for an obj-c camera library? Check out [PBJVision](https://github.com/piemonte/PBJVision).
+
 ### Features
 - [x] plays local media or streams remote media over HTTP
 - [x] customizable UI and user interaction
 - [x] no size restrictions
 - [x] orientation change support
 - [x] simple API
-
-- Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
-- Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
-- Looking for an obj-c camera library? Check out [PBJVision](https://github.com/piemonte/PBJVision).
 
 ## Installation
 
