@@ -8,7 +8,6 @@
 
 - Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
 - Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
-- Looking for an obj-c camera library? Check out [PBJVision](https://github.com/piemonte/PBJVision).
 
 ### Features
 - [x] plays local media or streams remote media over HTTP
@@ -17,7 +16,7 @@
 - [x] orientation change support
 - [x] simple API
 
-## Installation
+## Quick Start
 
 [CocoaPods](http://cocoapods.org) is the recommended method of installing PBJVideoPlayer, just add the following line to your `Podfile`:
 
