@@ -3,6 +3,9 @@
 ## PBJVideoPlayer
 `PBJVideoPlayer` is a simple video player library for iOS and tvOS.
 
+- Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
+- Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
+
 ### Features
 - [x] plays local media or streams remote media over HTTP
 - [x] customizable UI and user interaction
@@ -54,8 +57,8 @@ videoPlayerController.videoPath = @"https://example.com/video.mp4";
 ## Resources
 
 * [AV Foundation Programming Guide](https://developer.apple.com/library/ios/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
-* [PBJVision, iOS camera engine, features touch-to-record video, slow motion video, and photo capture](https://github.com/piemonte/PBJVision)
-* [Player, a simple iOS video player in Swift](https://github.com/piemonte/player)
+* [PBJVision](https://github.com/piemonte/PBJVision), iOS camera engine, features touch-to-record video, slow motion video, and photo capture
+* [Player](https://github.com/piemonte/player), a simple iOS video player in Swift
 
 ## License
 
