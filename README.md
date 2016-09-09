@@ -3,8 +3,8 @@
 ## PBJVideoPlayer
 `PBJVideoPlayer` is a simple video player library for iOS and tvOS.
 
-- Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
-- Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
+[![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
+[![Pod Version](https://img.shields.io/cocoapods/v/PBJVideoPlayer.svg?style=flat)](http://cocoadocs.org/docsets/PBJVideoPlayer/)
 
 ### Features
 - [x] plays local media or streams remote media over HTTP
@@ -13,10 +13,9 @@
 - [x] orientation change support
 - [x] simple API
 
-If you're looking for a video player written in [Swift](https://developer.apple.com/swift/), checkout [Player](https://github.com/piemonte/player). For video recording, checkout [PBJVision](https://github.com/piemonte/PBJVision).
-
-[![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
-[![Pod Version](https://img.shields.io/cocoapods/v/PBJVideoPlayer.svg?style=flat)](http://cocoadocs.org/docsets/PBJVideoPlayer/)
+- Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
+- Looking for a Swift camera library? Check out [Next Level](https://github.com/NextLevel/NextLevel).
+- Looking for an obj-c camera library? Check out [PBJVision](https://github.com/piemonte/PBJVision).
 
 ## Installation
 
