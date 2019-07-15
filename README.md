@@ -3,7 +3,7 @@
 ## PBJVideoPlayer
 `PBJVideoPlayer` is a simple video player library for iOS and tvOS.
 
-[![Build Status](https://travis-ci.org/piemonte/PBJVideoPlayer.svg)](https://travis-ci.org/piemonte/PBJVideoPlayer)
+[![Build Status](https://travis-ci.com/piemonte/PBJVideoPlayer.svg)](https://travis-ci.com/piemonte/PBJVideoPlayer)
 [![Pod Version](https://img.shields.io/cocoapods/v/PBJVideoPlayer.svg?style=flat)](http://cocoadocs.org/docsets/PBJVideoPlayer/) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/piemonte/PBJVideoPlayer/blob/master/LICENSE) [![Downloads](https://img.shields.io/cocoapods/dt/PBJVideoPlayer.svg?style=flat)](http://cocoapods.org/pods/PBJVideoPlayer)
 
 - Looking for a Swift video player? Check out [Player (Swift)](https://github.com/piemonte/Player).
